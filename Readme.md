@@ -237,7 +237,7 @@ for param in model_zp.parameters():
     param.data = dequantized
     weights_zp.append(dequantized)
 ```
-现在模型已经被量化，接下来可以检查这个过程的影响。 直观上，我们希望确保量化后的权重接近原始权重。 检查它的一种直观方法是绘制反量化权重和原始权重的分布。 如果量化是有损的，则会极大地改变权重分布。也可以比较原始模型和量化模型的性能。我们定义了一个generate\_text()函数来通过[https://mlabonne.github.io/blog/posts/2023-06-07-Decoding\_strategies.html](https://mlabonne.github.io/blog/posts/2023-06-07-Decoding\_strategies.html)生成50个token，进行模型性能比较。
+现在模型已经被量化，接下来可以检查这个过程的影响。 直观上，我们希望确保量化后的权重接近原始权重。 检查它的一种直观方法是绘制反量化权重和原始权重的分布。 如果量化是有损的，则会极大地改变权重分布。也可以比较原始模型和量化模型的性能。我们定义了一个generate\_text()函数来通过[top-k采样](https://mlabonne.github.io/blog/posts/2023-06-07-Decoding\_strategies.html)生成50个token，进行模型性能比较。
 
 
 ```
